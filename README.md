@@ -6,6 +6,7 @@ Este projeto, foi desenvolvido utilizando o framework **Ionic** com **Angular**.
 
 Certifique-se de que os seguintes itens estejam instalados na sua máquina:
 
+- **IDE de sua escolha** (sugestão: [Visual Studio Code](https://code.visualstudio.com/))
 - **Node.js** (versão LTS recomendada)
 - **npm** (geralmente instalado com o Node.js)
 - **Ionic CLI** (instale com o comando: `npm install -g @ionic/cli`)
