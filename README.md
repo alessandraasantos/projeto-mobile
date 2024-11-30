@@ -21,15 +21,15 @@ Certifique-se de que os seguintes itens estejam instalados na sua máquina:
    Navegue até o diretório do projeto:
    ```bash
    cd projeto-mobile
-4. **Instale as Dependências**
+3. **Instale as Dependências**
    ```bash
     npm install
 
-6. **Execute o Projeto**
+4. **Execute o Projeto**
    ```bash
    ionic serve
 
-8. **Acesse no Navegador**
+5.  **Acesse no Navegador**  
    Após executar o comando anterior, o projeto estará acessível em:
-   ```bash
-   http://localhost:8100
+    ```bash
+    http://localhost:8100
