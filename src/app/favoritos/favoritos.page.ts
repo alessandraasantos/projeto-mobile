@@ -1,24 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Component } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 
-
 @Component({
   selector: 'app-favoritos',
   templateUrl: './favoritos.page.html',
   styleUrls: ['./favoritos.page.scss'],
 })
-export class FavoritosPage {
+export class FavoritosPage implements OnInit {
 
-  private favorites: any[] = [];
+  public favorites: any[] = [];
+  
 
-  getFavorites() {
+  getFavorites(): any[] {
     return this.favorites;
   }
-
+  
   addFavorite(movie: any) {
     if (!this.isFavorite(movie.id)) {
       this.favorites.push(movie);
@@ -31,5 +31,11 @@ export class FavoritosPage {
 
   isFavorite(movieId: number): boolean {
     return this.favorites.some((movie) => movie.id === movieId);
+  } 
+
+  ngOnInit() {
+    const storedFavorites = localStorage.getItem('favorites');
+    this.favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
   }
+  
 }

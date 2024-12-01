@@ -10,11 +10,11 @@
       <ion-title size="large">{{ movieDetails?.title }}</ion-title>     
     </ion-toolbar>
   </ion-header>
-  
-  <ion-button slot="end" (click)="toggleFavorite()">
+
+  <ion-button class="favorite-button" (click)="toggleFavorite()">
     <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
     {{ isFavorite ? 'Favoritado' : 'Favoritar' }}
-  </ion-button>
+  </ion-button> 
   
   <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path" alt="{{ movieDetails?.title }}">
   <p>Resumo: {{ movieDetails?.overview }}</p>

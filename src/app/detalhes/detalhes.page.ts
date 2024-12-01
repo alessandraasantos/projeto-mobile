@@ -21,7 +21,7 @@ export class DetalhesPage implements OnInit {
         this.movieDetails = details;
         console.log('Movie Details:', this.movieDetails);
 
-        // Verifica se o filme já está favoritado
+        // Verifica se o filme já está favoritado no localStorage
         const storedFavorites = localStorage.getItem('favorites');
         this.favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
         this.isFavorite = this.favorites.some((movie) => movie.id === this.movieDetails.id);
@@ -30,12 +30,17 @@ export class DetalhesPage implements OnInit {
   }
 
   toggleFavorite() {
-    if (this.isFavorite) {
-      // Remove dos favoritos
-      this.favorites = this.favorites.filter((movie) => movie.id !== this.movieDetails.id);
+    if (!this.isFavorite) {
+      // Adiciona o filme aos favoritos
+      const favoriteMovie = {
+        id: this.movieDetails.id,
+        title: this.movieDetails.title,
+        poster_path: this.movieDetails.poster_path,
+      };
+      this.favorites.push(favoriteMovie);
     } else {
-      // Adiciona aos favoritos
-      this.favorites.push(this.movieDetails);
+      // Remove o filme dos favoritos
+      this.favorites = this.favorites.filter((movie) => movie.id !== this.movieDetails.id);
     }
 
     // Atualiza o estado e salva no localStorage
