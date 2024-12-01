@@ -25,3 +25,12 @@
 #container a {
   text-decoration: none;
 }
+
+.banner {
+  text-align: center;
+  padding: 20px;
+  h1 {
+    color: var(--ion-text-color);
+    margin-top: 20px;
+  }
+}
