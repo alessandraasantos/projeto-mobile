@@ -1,6 +1,12 @@
 <ion-header translucent="true">
   <ion-toolbar>
-    <ion-title class="center-title">O que gostaria de assistir?</ion-title>
+    <ion-title>Filmes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/favoritos">
+        <ion-icon name="heart"></ion-icon>
+        Favoritos
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -23,19 +29,4 @@
       </ion-row>
     </ion-grid>
   </div>
-
-  <div class="section">
-    <h2>Séries</h2>
-    <ion-grid>
-      <!-- Repita a lógica para séries -->
-    </ion-grid>
-  </div>
 </ion-content>
-
-<!-- Adicione esta parte ao seu arquivo de estilos -->
-<style>
-  .center-title {
-    text-align: center;
-    width: 100%;
-  }
-</style>
