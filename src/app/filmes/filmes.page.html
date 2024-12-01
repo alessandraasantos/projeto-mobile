@@ -5,6 +5,7 @@
 </ion-header>
 
 <ion-content fullscreen="true">
+  <ion-spinner *ngIf="!popularMovies.length" name="crescent"></ion-spinner>
   <ion-searchbar placeholder="Procure"></ion-searchbar>
 
   <div class="section">
