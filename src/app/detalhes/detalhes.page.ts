@@ -8,15 +8,16 @@ import { ApiService } from '../services/api.service';
   styleUrls: ['./detalhes.page.scss'],
 })
 export class DetalhesPage implements OnInit {
-  movie: any;
+  movieDetails: any;
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
-      this.apiService.getMovieDetails(id).subscribe(data => {
-        this.movie = data;
+      this.apiService.getMovieDetails(id).subscribe((details) => {
+        this.movieDetails = details;
+        console.log('Movie Details:', this.movieDetails);
       });
     }
   }

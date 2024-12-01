@@ -15,9 +15,9 @@ export class ApiService {
   
   getPopularMovies(): Observable<any> {
     const url = `${this.baseUrl}/movie/popular?api_key=${this.apiKey}`;
-    console.log('Requesting:', url); // Log da URL
+    console.log('Requesting:', url);
     return this.http.get(url).pipe(
-      tap(response => console.log('API Response:', response)) // Log da resposta
+      tap(response => console.log('API Response:', response))
     );
   }
 
