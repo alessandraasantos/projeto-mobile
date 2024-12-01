@@ -1,3 +1,9 @@
+# Equipe envolvida no desenvolvimento do Projeto
+  - Alessandra Cosmo dos Santos - 01630775
+  - Joâo Guilherme Caetano dos Santos - 01481382
+  - João Victor Mendonça da Silva - 01480878
+  - Rosilene da Silva Lima - 01619051
+
 # Instruções para Executar o Projeto
 
 Este projeto, foi desenvolvido utilizando o framework **Ionic** com **Angular**. Siga os passos abaixo para configurá-lo e executá-lo localmente.
