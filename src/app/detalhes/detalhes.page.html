@@ -27,12 +27,8 @@
     <div class="actors-section">
       <h2>Atores</h2>
       <div class="actors-list">
-        <div *ngFor="let actor of movieDetails?.actors" class="actor-card">
-          <img
-            [src]="actor.profile_path"
-            alt="{{ actor.name }}"
-            class="actor-photo"
-          />
+        <div *ngFor="let actor of movieDetails?.credits?.cast" class="actor-card">
+          <img [src]="'https://image.tmdb.org/t/p/w500/' + actor.profile_path" alt="{{ actor.name }}" class="actor-photo" />
           <p>{{ actor.name }}</p>
         </div>
       </div>
