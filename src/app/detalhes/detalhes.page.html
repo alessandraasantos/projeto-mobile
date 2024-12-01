@@ -1,22 +1,41 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Detalhes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/filmes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ movieDetails?.title }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="toggleFavorite()">
+        <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">{{ movieDetails?.title }}</ion-title>     
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-button class="favorite-button" (click)="toggleFavorite()">
-    <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
-    {{ isFavorite ? 'Favoritado' : 'Favoritar' }}
-  </ion-button> 
-  
-  <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path" alt="{{ movieDetails?.title }}">
-  <p>Resumo: {{ movieDetails?.overview }}</p>
-  <p>Lançamento: {{ movieDetails?.release_date }}</p>
+  <div class="details-container">
+    <img
+      class="poster"
+      [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path"
+      alt="{{ movieDetails?.title }}"
+    />
+    <div class="movie-info">
+      <h1>{{ movieDetails?.title }}</h1>
+      <p class="release-date">Lançamento: {{ movieDetails?.release_date }}</p>
+      <p class="overview">{{ movieDetails?.overview }}</p>
+    </div>
+    <div class="actors-section">
+      <h2>Atores</h2>
+      <div class="actors-list">
+        <div *ngFor="let actor of movieDetails?.actors" class="actor-card">
+          <img
+            [src]="actor.profile_path"
+            alt="{{ actor.name }}"
+            class="actor-photo"
+          />
+          <p>{{ actor.name }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </ion-content>

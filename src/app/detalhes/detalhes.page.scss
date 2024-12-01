@@ -1,5 +1,71 @@
-.favorite-button {
-    margin-left: auto;
-    color: var(--ion-color-primary);
+.details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(to bottom, #1e1e2c, #141419);
+  color: white;
+}
+
+.poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.movie-info {
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
   }
-  
+
+  .release-date {
+    font-size: 1rem;
+    color: #888;
+  }
+
+  .overview {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.actors-section {
+  margin-top: 2rem;
+  width: 100%;
+
+  h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .actors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .actor-card {
+    text-align: center;
+    width: 100px;
+
+    .actor-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid white;
+    }
+
+    p {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
+}

@@ -1,36 +1,29 @@
-#container {
+.home-content {
+  --background: linear-gradient(to bottom, #1b1b1b, #0f0f0f);
   text-align: center;
+  color: var(--ion-color-secondary);
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+  .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-.banner {
-  text-align: center;
-  padding: 20px;
-  h1 {
-    color: var(--ion-text-color);
-    margin-top: 20px;
+    .hero-text {
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+      }
+      p {
+        font-size: 16px;
+        color: var(--ion-color-secondary, #999);
+      }
+      .enter-button {
+        margin-top: 20px;
+        background-color: var(--custom-green);
+        border-radius: 30px;
+      }
+    }
   }
 }

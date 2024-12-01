@@ -22,7 +22,14 @@ export class ApiService {
   }
 
   getMovieDetails(id: string): Observable<any> {
-    const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}`;
+    const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&append_to_response=credits`;
     return this.http.get<any>(url);
   }
 }
+/*  getMovieDetails(id: string): Observable<any> {
+    const url = `${this.baseUrl}/movie/${id}?api_key=${this.apiKey}&append_to_response=credits`;
+    return this.http.get<any>(url);
+  }
+  
+}
+*/

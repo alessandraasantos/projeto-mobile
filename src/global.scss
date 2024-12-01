@@ -3,5 +3,11 @@
     --ion-text-color: #ffffff;      
   }
   body {
-    font-family: 'Inter', sans-serif; /* Fonte moderna */
+    font-family: 'Poppins', sans-serif;
+  }  
+  ion-content {
+    --background: linear-gradient(180deg, #1c1c1c 0%, #0e0e0e 100%);
   }
+  body {
+  font-family: 'Poppins', sans-serif;
+}

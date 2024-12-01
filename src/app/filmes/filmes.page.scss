@@ -1,0 +1,39 @@
+ion-content {
+    --background: #121212;
+    color: white;
+  }
+  
+  .section {
+    margin: 16px;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+  
+  ion-card {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  
+    img {
+      border-radius: 12px;
+    }
+  
+    ion-card-content {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #ffffff;
+    }
+  }
+  
+  ion-searchbar {
+    --background: #1e1e1e;
+    margin: 12px;
+    border-radius: 12px;
+  }
+  
