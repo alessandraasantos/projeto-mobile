@@ -36,4 +36,12 @@ ion-content {
     margin: 12px;
     border-radius: 12px;
   }
+  ion-button {
+    --color: var(--ion-color-primary);
+    --background: transparent;
+  }
+  
+  ion-button ion-icon {
+    margin-right: 5px;
+  }
   
