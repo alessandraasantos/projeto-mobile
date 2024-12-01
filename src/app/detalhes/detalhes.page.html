@@ -1,18 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>detalhes</ion-title>
+    <ion-title>Detalhes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">{{ movieDetails?.title }}</ion-title>
+      <ion-title size="large">{{ movieDetails?.title }}</ion-title>     
     </ion-toolbar>
   </ion-header>
-  <ion-content>
-    <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path" />
-    <p>{{ movieDetails?.overview }}</p>
-    <p>Lançamento: {{ movieDetails?.release_date }}</p>
-  </ion-content>    
+  
+  <ion-button slot="end" (click)="toggleFavorite()">
+    <ion-icon [name]="isFavorite ? 'heart' : 'heart-outline'"></ion-icon>
+    {{ isFavorite ? 'Favoritado' : 'Favoritar' }}
+  </ion-button>
+  
+  <img [src]="'https://image.tmdb.org/t/p/w500/' + movieDetails?.poster_path" alt="{{ movieDetails?.title }}">
+  <p>Resumo: {{ movieDetails?.overview }}</p>
+  <p>Lançamento: {{ movieDetails?.release_date }}</p>
 </ion-content>

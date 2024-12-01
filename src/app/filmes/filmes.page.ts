@@ -17,6 +17,4 @@ export class FilmesPage implements ViewWillEnter {
         this.popularMovies = data.results;
     });
   }
-
-  ngOnInit() {}
 }
