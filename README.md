@@ -1,6 +1,6 @@
 # Equipe envolvida no desenvolvimento do Projeto
   - Alessandra Cosmo dos Santos - 01630775
-  - Joâo Guilherme Caetano dos Santos - 01481382
+  - João Guilherme Caetano dos Santos - 01481382
   - João Victor Mendonça da Silva - 01480878
   - Rosilene da Silva Lima - 01619051
 
