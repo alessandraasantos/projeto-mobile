@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>filmes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">filmes</ion-title>
+      <div *ngFor="let movie of popularMovies">
+        <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" alt="{{ movie.title }}">
+        <p>{{ movie.title }}</p>
+      </div>      
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
