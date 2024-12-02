@@ -1,28 +1,54 @@
 .home-content {
-  --background: linear-gradient(to bottom, #1b1b1b, #0f0f0f);
+  --background: linear-gradient(to bottom, #1b1b1b, #0f0f0f); /* Fundo escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Preenche toda a altura da tela */
   text-align: center;
   color: var(--ion-color-secondary);
 
   .hero {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
     flex-direction: column;
+    align-items: center;
 
+    /* Imagem circular com borda e sombra */
+    .hero-image {
+      margin-bottom: 20px;
+
+      img {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%; /* Faz a imagem ficar circular */
+        object-fit: cover; /* Ajusta a imagem sem distorção */
+        border: 3px solid #00ff85; /* Borda verde */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* Sombra suave */
+      }
+    }
+
+    /* Texto abaixo da imagem */
     .hero-text {
       h1 {
         font-size: 24px;
         font-weight: 600;
+        color: #fff; /* Branco para contraste no fundo escuro */
+        margin-bottom: 10px;
       }
+
       p {
         font-size: 16px;
-        color: var(--ion-color-secondary, #999);
+        color: #ccc; /* Cinza claro para o subtítulo */
+        margin-bottom: 20px;
       }
+
       .enter-button {
         margin-top: 20px;
-        background-color: var(--custom-green);
+        background-color: #00ff85; /* Verde */
+        color: #000; /* Texto do botão em preto */
         border-radius: 30px;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-size: 16px;
       }
     }
   }
