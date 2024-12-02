@@ -16,7 +16,7 @@ export class HomePage {
       this.navCtrl.navigateRoot('/filmes');
     }
     
-    Favoritos() {
+    goToFavoritos() {
       this.navCtrl.navigateRoot('/favoritos');
     }
 }
