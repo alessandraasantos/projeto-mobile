@@ -9,7 +9,14 @@ import { NavController } from '@ionic/angular';
 export class HomePage {
   constructor(private navCtrl: NavController) {}
 
-  goToFilmes() {
+  /*goToFilmes() {
     this.navCtrl.navigateForward('/filmes');
-  }
+  }*/
+    goToFilmes() {
+      this.navCtrl.navigateRoot('/filmes');
+    }
+    
+    Favoritos() {
+      this.navCtrl.navigateRoot('/favoritos');
+    }
 }

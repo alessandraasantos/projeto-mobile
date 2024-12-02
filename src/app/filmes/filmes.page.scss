@@ -1,4 +1,42 @@
 ion-content {
+  --background: #121212;
+  color: white;
+  padding-top: 0; /* Remover qualquer padding extra no topo */
+}
+
+ion-header {
+  --padding-top: 0px; /* Reduzir o padding superior do header */
+}
+
+.section {
+  margin: 16px;
+}
+
+ion-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+
+  img {
+    border-radius: 12px;
+  }
+
+  ion-card-content {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+  }
+}
+
+ion-searchbar {
+  --background: #1e1e1e;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+
+/*ion-content {
     --background: #121212;
     color: white;
   }
@@ -35,5 +73,5 @@ ion-content {
     --background: #1e1e1e;
     margin: 12px;
     border-radius: 12px;
-  }
+  }*/
   

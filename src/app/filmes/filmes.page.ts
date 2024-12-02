@@ -18,4 +18,6 @@ export class FilmesPage implements OnInit {
       window.scrollTo(0, 0); // Força o scroll para o topo
     });
   }
+  
+  
 }
