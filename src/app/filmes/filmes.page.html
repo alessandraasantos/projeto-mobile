@@ -13,13 +13,13 @@
 <ion-content fullscreen="true">
   <ion-spinner *ngIf="!popularMovies.length" name="crescent"></ion-spinner>
 
-  <div class="section">
+  <div class="section" *ngIf="popularMovies.length > 0">
     <h2>Filmes populares</h2>
     <ion-grid>
       <ion-row>
         <ion-col size="6" size-md="4" size-lg="3" *ngFor="let movie of popularMovies">
-          <ion-card routerLink="/detalhes/{{ movie.id }}">
-            <img src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}" />
+          <ion-card (click)="goToMovieDetails(movie.id)"> <!-- Função já corrigida no .ts -->
+            <img [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path" />
             <ion-card-content>
               <h3>{{ movie.title }}</h3>
             </ion-card-content>

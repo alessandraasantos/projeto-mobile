@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';  // Importando ActivatedRoute para pegar parâmetros de rota
 import { ApiService } from '../services/api.service';
 
 @Component({

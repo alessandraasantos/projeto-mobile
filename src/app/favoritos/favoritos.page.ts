@@ -1,9 +1,6 @@
-import { Injectable, OnInit } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';  // Importando Router
 
-@Injectable({
-  providedIn: 'root',
-})
 @Component({
   selector: 'app-favoritos',
   templateUrl: './favoritos.page.html',
@@ -11,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class FavoritosPage implements OnInit {
   public favorites: any[] = [];
+
+  constructor(private router: Router) {}  // Injetando Router
 
   // Carrega favoritos do localStorage ao iniciar
   ngOnInit() {
@@ -38,5 +37,10 @@ export class FavoritosPage implements OnInit {
 
   isFavorite(movieId: number): boolean {
     return this.favorites.some((movie) => movie.id === movieId);
+  }
+
+  // Função para navegar para a página de filmes
+  goToFilmes() {
+    this.router.navigate(['/filmes']);  // Navega para a página de filmes
   }
 }
