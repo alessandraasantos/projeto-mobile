@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';  // Importando Router
+import { NavController } from '@ionic/angular';  // Importando NavController
 
 @Component({
   selector: 'app-favoritos',
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';  // Importando Router
 export class FavoritosPage implements OnInit {
   public favorites: any[] = [];
 
-  constructor(private router: Router) {}  // Injetando Router
+  constructor(private navCtrl: NavController) {}  // Injetando NavController
 
   // Carrega favoritos do localStorage ao iniciar
   ngOnInit() {
@@ -41,6 +41,7 @@ export class FavoritosPage implements OnInit {
 
   // Função para navegar para a página de filmes
   goToFilmes() {
-    this.router.navigate(['/filmes']);  // Navega para a página de filmes
+    this.navCtrl.navigateForward('/filmes');  // Navega para a página de filmes
   }
 }
+

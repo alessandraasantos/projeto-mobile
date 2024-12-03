@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular'; // Importando NavController
 import { ApiService } from '../services/api.service';
-import { Router } from '@angular/router'; // Importa o Router
 
 @Component({
   selector: 'app-filmes',
@@ -10,18 +10,26 @@ import { Router } from '@angular/router'; // Importa o Router
 export class FilmesPage implements OnInit {
   popularMovies: any[] = [];
 
-  constructor(private apiService: ApiService, private router: Router) {} 
+  constructor(
+    private apiService: ApiService,
+    private navCtrl: NavController // Injetando NavController
+  ) {}
 
   ngOnInit() {
     this.apiService.getPopularMovies().subscribe((data: any) => {
       console.log('API Response:', data);
       this.popularMovies = data.results;
-      window.scrollTo(0, 0); 
+      window.scrollTo(0, 0); // Força o scroll para o topo
     });
   }
 
-  
-  goToMovieDetails(movieId: number) {
-    this.router.navigate(['/detalhes', movieId]); 
+goToMovieDetails(movieId: number) {
+  console.log(`Navigating to movie details with ID: ${movieId}`); // Log para depurar
+  this.navCtrl.navigateForward(`/detalhes/${movieId}`);
+}
+
+  // Usando NavController para navegação para a página de Favoritos
+  goToFavoritos() {
+    this.navCtrl.navigateForward('/favoritos'); // Navega para a página de favoritos
   }
 }
