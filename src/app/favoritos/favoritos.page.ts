@@ -1,18 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';  // Importando NavController
+import { NavController, ViewWillEnter } from '@ionic/angular';  // Importando NavController
 
 @Component({
   selector: 'app-favoritos',
   templateUrl: './favoritos.page.html',
   styleUrls: ['./favoritos.page.scss'],
 })
-export class FavoritosPage implements OnInit {
+export class FavoritosPage implements ViewWillEnter {
   public favorites: any[] = [];
 
-  constructor(private navCtrl: NavController) {}  // Injetando NavController
+  constructor(private navCtrl: NavController) {}
 
-  // Carrega favoritos do localStorage ao iniciar
-  ngOnInit() {
+  ionViewWillEnter() {
     const storedFavorites = localStorage.getItem('favorites');
     this.favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
   }
@@ -21,7 +20,10 @@ export class FavoritosPage implements OnInit {
     return this.favorites;
   }
 
-  // Adiciona ao localStorage e atualiza a lista
+  goToMovieDetails(movieId: number) {
+    this.navCtrl.navigateForward(`/detalhes/${movieId}`);
+  }  
+
   addFavorite(movie: any) {
     if (!this.isFavorite(movie.id)) {
       this.favorites.push(movie);

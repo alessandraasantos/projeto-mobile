@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular'; // Importando NavController
+import { NavController, ViewWillEnter } from '@ionic/angular'; // Importando NavController
 import { ApiService } from '../services/api.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ApiService } from '../services/api.service';
   templateUrl: './filmes.page.html',
   styleUrls: ['./filmes.page.scss'],
 })
-export class FilmesPage implements OnInit {
+export class FilmesPage implements ViewWillEnter {
   popularMovies: any[] = [];
 
   constructor(
@@ -15,12 +15,14 @@ export class FilmesPage implements OnInit {
     private navCtrl: NavController // Injetando NavController
   ) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.apiService.getPopularMovies().subscribe((data: any) => {
       console.log('API Response:', data);
       this.popularMovies = data.results;
-      window.scrollTo(0, 0); // Força o scroll para o topo
+      window.scrollTo(0, 0);
     });
+
+  
   }
 
 goToMovieDetails(movieId: number) {

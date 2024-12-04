@@ -1,33 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';  // Importando ActivatedRoute para pegar parâmetros de rota
 import { ApiService } from '../services/api.service';
+import { ViewWillEnter } from '@ionic/angular';
 
-@Component({
+@Component({ 
   selector: 'app-detalhes',
   templateUrl: './detalhes.page.html',
   styleUrls: ['./detalhes.page.scss'],
 })
-export class DetalhesPage implements OnInit {
+export class DetalhesPage implements ViewWillEnter {
   movieDetails: any;
   isFavorite: boolean = false;
   favorites: any[] = [];
 
   constructor(private route: ActivatedRoute, private apiService: ApiService) {}
 
-  ngOnInit() {
+  ionViewWillEnter() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {
       this.apiService.getMovieDetails(id).subscribe((details) => {
         this.movieDetails = details;
         console.log('Movie Details:', this.movieDetails);
-
-        // Verifica se o filme já está favoritado no localStorage
+  
         const storedFavorites = localStorage.getItem('favorites');
         this.favorites = storedFavorites ? JSON.parse(storedFavorites) : [];
         this.isFavorite = this.favorites.some((movie) => movie.id === this.movieDetails.id);
       });
     }
   }
+  
 
   toggleFavorite() {
     if (!this.isFavorite) {

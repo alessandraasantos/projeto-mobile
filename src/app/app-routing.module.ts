@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}  // Certifique-se de que este nome é correto
+export class AppRoutingModule {} 
