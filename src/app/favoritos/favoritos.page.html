@@ -1,10 +1,10 @@
-<ion-content [fullscreen]="true"> 
+<ion-content [fullscreen]="true">
   <ion-header [translucent]="true">
     <ion-toolbar>
           <ion-buttons slot="start">
         <ion-back-button defaultHref="/filmes"></ion-back-button> <!-- Correto -->
       </ion-buttons>
-      <ion-title>Favoritos</ion-title>
+      <ion-title>Favorites</ion-title>
     </ion-toolbar>
   </ion-header>
   <div class="favorites-container">
@@ -16,8 +16,8 @@
             <ion-card-content>
               <h2>{{ movie.title }}</h2>
               <ion-button color="danger" (click)="removeFavorite(movie.id)">
-                Remover
-              </ion-button> 
+                Remove
+              </ion-button>
             </ion-card-content>
           </ion-card>
         </ion-col>
