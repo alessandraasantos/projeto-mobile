@@ -21,7 +21,7 @@ export class FavoritosPage implements ViewWillEnter {
   }
 
   goToMovieDetails(movieId: number) {
-    this.navCtrl.navigateForward(`/detalhes/${movieId}`);
+    this.navCtrl.navigateRoot(`/detalhes/${movieId}`);
   }  
 
   addFavorite(movie: any) {
@@ -43,7 +43,7 @@ export class FavoritosPage implements ViewWillEnter {
 
   // Função para navegar para a página de filmes
   goToFilmes() {
-    this.navCtrl.navigateForward('/filmes');  // Navega para a página de filmes
+    this.navCtrl.navigateRoot('/filmes');  // Navega para a página de filmes
   }
 }
 

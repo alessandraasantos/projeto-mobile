@@ -27,11 +27,11 @@ export class FilmesPage implements ViewWillEnter {
 
 goToMovieDetails(movieId: number) {
   console.log(`Navigating to movie details with ID: ${movieId}`); // Log para depurar
-  this.navCtrl.navigateForward(`/detalhes/${movieId}`);
+  this.navCtrl.navigateRoot(`/detalhes/${movieId}`);
 }
 
   // Usando NavController para navegação para a página de Favoritos
   goToFavoritos() {
-    this.navCtrl.navigateForward('/favoritos'); // Navega para a página de favoritos
+    this.navCtrl.navigateRoot('/favoritos'); // Navega para a página de favoritos
   }
 }
